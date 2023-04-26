@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewActivity"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/view_back_btn"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="24sp"
+                android:background="@drawable/view_back_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/view_home_btn"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="10sp"
+                android:background="@drawable/view_home_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view_back_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/view_share_btn"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:background="@drawable/view_share_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view_option_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="20sp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/view_option_btn"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:background="@drawable/view_option_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20sp"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/view_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/home_image_two"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10sp"
+                android:paddingTop="15sp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/view_profile_img"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:src="@drawable/view_profile_img"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_profile_img"
+                    android:text="닉네임"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="1sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="호계동"
+                    android:textSize="11.5sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@id/view_profile_img"
+                    app:layout_constraintTop_toBottomOf="@id/view_nickname"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="2sp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/view_imoticon_img"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:src="@drawable/view_imoticon_img"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/view_fever_img"
+                    android:layout_width="45sp"
+                    android:layout_height="29sp"
+                    android:src="@drawable/view_fever_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="6sp"
+                    app:layout_constraintEnd_toStartOf="@id/view_imoticon_img"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fever"
+                    android:textSize="10sp"
+                    app:layout_constraintTop_toBottomOf="@id/view_imoticon_img"
+                    android:layout_marginTop="2sp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#C1C1C1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_place"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginBottom="15sp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="물건명"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="10sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_category_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="남성 패션/잡화 · 20분 전"
+                android:textColor="#939393"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="15sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내용"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="80sp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStart="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_bottomnavigationview"
+                    android:paddingStart="14sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/view_heart"
+                        android:layout_width="20sp"
+                        android:layout_height="20sp"
+                        android:src="@drawable/view_heart_btn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <View
+                        android:id="@+id/bottom_line"
+                        android:layout_width="2dp"
+                        android:layout_height="38sp"
+                        android:background="#DADADA"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/view_heart"
+                        android:layout_marginVertical="15sp"
+                        android:layout_marginStart="15sp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bottom_line"
+                        android:text="10,000원"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="13sp"
+                        android:layout_marginTop="15sp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격 제안 불가"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/bottom_line"
+                        app:layout_constraintTop_toBottomOf="@id/view_cost"
+                        android:layout_marginStart="13sp"
+                        android:layout_marginTop="5sp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="14sp"
+                        android:text="채팅하기"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#ee7733"
+                        android:stateListAnimator="@null"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

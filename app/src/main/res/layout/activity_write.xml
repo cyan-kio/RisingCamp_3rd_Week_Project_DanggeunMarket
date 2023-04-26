@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".WriteActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/write_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@drawable/border_toolbar"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/chat_back_btn"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/write_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:text="중고거래 글쓰기"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chat_back_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/write_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="완료"
+                android:textColor="#ee7733"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/write_toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="15sp"
+            android:paddingTop="20sp">
+
+            <TextView
+                android:id="@+id/write_album_tv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/write_album_btn"
+                android:gravity="center"
+                android:paddingTop="23sp"
+                android:text="0/10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#EFEFEF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/write_album_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/write_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="제목"
+            android:paddingVertical="15sp"
+            android:paddingStart="15sp"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:textColorHint="#BFBFBF"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15sp"
+            android:background="#EFEFEF" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="15sp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/write_cost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="W 가격 (선택사항)"
+                android:inputType="numberDecimal"
+                android:paddingVertical="15sp"
+                android:paddingStart="15sp"
+                android:textColorHint="#BFBFBF"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/write_devide_ck"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/write_devide_ck"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/write_devide_ck_selector"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/write_devide_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/write_devide_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3sp"
+                android:text="나눔"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="15sp"
+                android:background="#EFEFEF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/write_cost" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/write_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15sp"
+            android:paddingTop="15sp"
+            android:paddingBottom="35dp">
+
+            <CheckBox
+                android:id="@+id/write_cost_suggest_ck"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/write_devide_ck_selector"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/write_cost_suggest_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15sp"
+                android:text="가격 제안받기"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/write_cost_suggest_ck"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/write_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15sp"
+            android:background="@null"
+            android:hint="부흥동에 올릴 게시글 내용을 작성해주세요. (가품 및 판매 금지 물품은 게시가 제한될 수 있어요.)"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:textSize="16sp"
+            android:layout_marginBottom="80sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginVertical="3sp"
+            android:background="#DCDCDC" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/write_trade_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15sp"
+            android:paddingStart="15sp"
+            android:paddingEnd="10sp">
+
+            <TextView
+                android:id="@+id/write_trade_place_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="거래 희망 장소"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/write_trade_place_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8sp"
+                android:text="장소 선택"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/write_place_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/write_place_img"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/write_place_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="140sp"
+            android:background="#DCDCDC" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="15sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/write_used_words_img"
+                android:layout_width="19sp"
+                android:layout_height="19sp"
+                android:src="@drawable/write_used_words"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/write_used_words_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자주 쓰는 문구"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/write_used_words_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="9sp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/write_choice_home_img"
+                android:layout_width="18sp"
+                android:layout_height="18sp"
+                android:src="@drawable/write_choice_home"
+                android:layout_marginStart="30sp"
+                app:layout_constraintStart_toEndOf="@+id/write_used_words_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/write_choice_home_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보여줄 동네 설정"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/write_choice_home_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="9sp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
