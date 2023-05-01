@@ -3,6 +3,7 @@ package com.cookandroid.danggeunmarket_clone_project
 import android.graphics.drawable.Drawable
 
 data class ResellData(
+    var id: Int,
     var image: Drawable?,
     var title: String,
     var placeTime: String,
